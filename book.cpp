@@ -23,3 +23,20 @@ string Book::getISBN() const {
 bool Book::getAvailability() const {
     return isAvailable;
 }
+
+string Book::getBorrowerId() const {
+    return borrowerId;
+}
+
+void Book::setAvailability(bool available) {
+    isAvailable = available;
+}
+
+void Book::setBorrowerId(const string& id) {
+    borrowerId = id;
+}
+
+void Book::returnBook() {
+    setAvailability(true);
+    setBorrowerId("");
+}
