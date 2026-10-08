@@ -11,3 +11,7 @@ Book::Book(const string& title, const string& author, const string& isbn)
 string Book::getTitle() const {
     return title;
 }
+
+string Book::getISBN() const {
+    return author;
+}
