@@ -13,5 +13,9 @@ string Book::getTitle() const {
 }
 
 string Book::getISBN() const {
-    return author;
+    return isbn;
+}
+
+bool Book::getAvailability() const {
+    return isAvailable;
 }
