@@ -1,3 +1,4 @@
+#include <sstream>
 #include <iostream>
 
 #include "book.h"
@@ -44,4 +45,23 @@ void Book::returnBook() {
 void Book::checkOut(const string& borrowerId) {
     setAvailability(false);
     setBorrowerId(borrowerId);
+}
+
+void Book::fromFileFormat(const string& line) {
+    stringstream ss(line);
+    string token;
+
+    getline(ss, title, '|');
+    getline(ss, author, '|');
+    getline(ss, isbn, '|');
+
+    string available;
+    getline(ss, available, '|');
+    getline(ss, borrowerId, '|');
+
+    if(available == "1") {
+        isAvailable = true;
+    } else {
+        isAvailable = false;
+    }
 }
