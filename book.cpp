@@ -29,6 +29,18 @@ string Book::getBorrowerId() const {
     return borrowerId;
 }
 
+void Book::setTitle(const string& newTitle) {
+    title = newTitle;
+}
+
+void Book::setAuthor(const string& newAuthor) {
+    author = newAuthor;
+}
+
+void Book::setISBN(const string& newIsbn) {
+    isbn = newIsbn;
+}
+
 void Book::setAvailability(bool available) {
     isAvailable = available;
 }
