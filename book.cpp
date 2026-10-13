@@ -47,6 +47,17 @@ void Book::checkOut(const string& borrowerId) {
     setBorrowerId(borrowerId);
 }
 
+string Book::toString() const {
+    string available;
+    if(isAvailable) {
+        available = "Oui";
+    } else {
+        available = "Non";
+    }
+    string result = "Titre : " + title + "\nAuteur : " + author + "\nDisponible : " + available;
+    return result;
+}
+
 string Book::toFileFormat() const {
     string available;
     string result;
