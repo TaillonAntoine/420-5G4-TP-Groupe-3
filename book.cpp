@@ -47,6 +47,18 @@ void Book::checkOut(const string& borrowerId) {
     setBorrowerId(borrowerId);
 }
 
+string Book::toFileFormat() const {
+    string available;
+    string result;
+    if(isAvailable) {
+        result = title + "|" + author + "|" + isbn + "|" + "1" + "|";
+    }else {
+        result = title + "|" + author + "|" + isbn + "|" + "0" + "|" + borrowerId;
+    }
+    
+    return result;
+}
+
 void Book::fromFileFormat(const string& line) {
     stringstream ss(line);
     string token;
