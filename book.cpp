@@ -40,3 +40,8 @@ void Book::returnBook() {
     setAvailability(true);
     setBorrowerId("");
 }
+
+void Book::checkOut(const string& borrowerId) {
+    setAvailability(false);
+    setBorrowerId(borrowerId);
+}
