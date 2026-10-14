@@ -148,6 +148,8 @@ bool Library::returnBook(const string& isbn) {
 
 // Display all books
 void Library::displayAllBooks() {
+    string borrowerId;
+    User* borrowerName;
     if (books.empty()) {
         cout << "Aucun livre dans la bibliothèque.\n";
         return;
@@ -156,7 +158,13 @@ void Library::displayAllBooks() {
     cout << "\n=== TOUS LES LIVRES ===\n";
     for (size_t i = 0; i < books.size(); ++i) {
         cout << "\nLivre " << (i + 1) << " :\n";
-        cout << books[i]->toString() << "\n";
+        if(books[i]->getAvailability()) {
+            cout << books[i]->toString() << "\n";
+        } else {
+            borrowerId = books[i]->getBorrowerId();
+            borrowerName = findUserById(borrowerId);
+            cout << books[i]->toString(borrowerName->getName()) << "\n";
+        }
         cout << "-------------------------\n";
     }
 }

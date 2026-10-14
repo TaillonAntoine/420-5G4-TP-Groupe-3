@@ -60,14 +60,11 @@ void Book::checkOut(const string& borrowerId) {
 }
 
 string Book::toString() const {
-    string available;
-    if(isAvailable) {
-        available = "Oui";
-    } else {
-        available = "Non";
-    }
-    string result = "Titre : " + title + "\nAuteur : " + author + "\nDisponible : " + available;
-    return result;
+    return "Titre : " + title + "\nAuteur : " + author + "\nDisponible : Oui";
+}
+
+string Book::toString(const string& borrowerName) const {
+    return "Titre : " + title + "\nAuteur : " + author + "\nDisponible : Non" + "\nNom de l'emprunteur : " + borrowerName;
 }
 
 string Book::toFileFormat() const {
