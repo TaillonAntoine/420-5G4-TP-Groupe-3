@@ -24,7 +24,7 @@ ofstream vient de la bibliothèque fstream.
 
 C'est moi qui a écrit ce code pour écrire dans le fichier :
 
-ofstream journal("../data/journal.txt", ios::app);
+    ofstream journal("../data/journal.txt", ios::app);
 
     auto heure = chrono::system_clock::now();
     time_t temps = chrono::system_clock::to_time_t(heure);
