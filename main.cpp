@@ -115,6 +115,7 @@ int main(int argc, char* argv[]) {
                     library.addBook(newBook);
                     cout << "Livre ajouté avec succès !\n";
                 }
+                fileManager.journal("ajout de livre", title);
                 pauseForInput();
                 break;
             }
